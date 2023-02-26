@@ -14,7 +14,6 @@ function solution(numer1, denom1, numer2, denom2) {
 
 function div(n1, n2) {
     if (n1===1 || n2===1){
-        console.log(n1,n2);
         return [n1, n2];
     }
         
@@ -22,11 +21,9 @@ function div(n1, n2) {
         if(n1%i===0 && n2%i===0) {
             n1/=i;
             n2/=i;
-            console.log(n1,n2);
             [n1, n2] = div(n1, n2);
             break;
         }
     }
-    console.log(n1,n2);
     return [n1, n2];
 }

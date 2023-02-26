@@ -1,12 +1,10 @@
-부족한 점: 최대공약수 GCD 구하는 함수 공부하기
-
 # [level 0] 분수의 덧셈 - 120808 
 
 [문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120808) 
 
 ### 성능 요약
 
-메모리: 33.5 MB, 시간: 2.50 ms
+메모리: 33.6 MB, 시간: 0.36 ms
 
 ### 구분
 
