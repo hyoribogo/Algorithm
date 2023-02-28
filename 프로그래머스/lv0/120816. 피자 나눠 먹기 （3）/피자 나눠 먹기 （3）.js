@@ -1,0 +1,1 @@
+const solution = (slice, n) => slice >= n ? 1 : Math.ceil(n / slice)
