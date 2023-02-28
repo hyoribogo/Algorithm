@@ -1,7 +1,8 @@
 function solution(s) {
-    return s.split(' ').map(i => [...i].map((v, idx) => {
-        if(idx % 2)
-            return v.toLowerCase()
-        return v.toUpperCase()
-    }).join('')).join(' ')
+    return s.split(' ')
+        .map(i => [...i]
+             .map((v, idx) => 
+                  idx % 2 ? v.toLowerCase() : v.toUpperCase())
+             .join(''))
+        .join(' ')
 }
