@@ -1,5 +1,4 @@
 const solution = (emergency) => {
-    const keep = [...emergency]
-    emergency.sort((a, b) => b - a)
-    return keep.map(i => emergency.indexOf(i) + 1)
+    const sortedArr = [...emergency].sort((a, b) => b - a)
+    return emergency.map(i => sortedArr.indexOf(i) + 1)
 }
