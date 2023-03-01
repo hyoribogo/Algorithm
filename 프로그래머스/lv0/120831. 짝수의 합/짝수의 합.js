@@ -1,0 +1,1 @@
+const solution = (n) => n > 1 ? (2 + n - n % 2) / 2 * Math.floor(n / 2) : 0
