@@ -1,22 +1,17 @@
 function solution(n) {
-    let cnt = 0
-    for (let i = 1; i <= n; i++){
-        cnt = isPrime(i) ? cnt + 1 : cnt
-    }
-    return cnt
+  let cnt = 1
+  for (let i = 3; i <= n; i += 2) {
+    if (isPrime(i)) cnt++
+  }
+  return cnt;
 }
 
 function isPrime(num) {
-    if (num === 1)
-        return false;
-  
-    if (num === 2)
-        return true;
- 
-  
-    for(let i = 2; i <= Math.floor(Math.sqrt(num)); i++){
-        if(num % i === 0)
-            return false;
-    }
-    return true; 
+  if (num % 2 === 0) return false;
+
+  const sqrt = Math.floor(Math.sqrt(num));
+  for (let i = 3; i <= sqrt; i += 2) {
+    if (num % i === 0) return false;
+  }
+  return true;
 }
