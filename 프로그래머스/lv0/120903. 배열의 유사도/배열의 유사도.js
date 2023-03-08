@@ -1,7 +1,4 @@
-const solution = (s1, s2) => s1.filter(i => {
-    for (let j of s2) {
-        console.log(i, j)
-        if (i === j)
-            return i
-        }
-    }).length
+function solution(s1, s2) {
+    const intersection = s1.filter((x) => s2.includes(x));
+    return intersection.length;
+}
