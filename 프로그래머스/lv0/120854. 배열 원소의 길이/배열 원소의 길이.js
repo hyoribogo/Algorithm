@@ -1,1 +1,1 @@
-const solution = strlist => strlist.map(i => [...i].length)
+const solution = strlist => strlist.map(i => i.length)
