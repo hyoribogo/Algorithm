@@ -1,0 +1,1 @@
+const solution = x => !(x % [...x.toString()].reduce((a, r) => +a + +r))
