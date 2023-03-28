@@ -8,26 +8,26 @@ function solution(maps) {
     visited[0][0] = true;
 
     while (q.length) {
-        const [x, y, dist] = q.shift();
+        const [y, x, dist] = q.shift();
 
-        if (x === n - 1 && y === m - 1) {
+        if (y === n - 1 && x === m - 1) {
             return dist;
         }
 
-        for (const [dx, dy] of dirs) {
-            const nx = x + dx;
+        for (const [dy, dx] of dirs) {
             const ny = y + dy;
+            const nx = x + dx;
 
-            if (nx < 0 || nx >= n || ny < 0 || ny >= m) {
+            if (ny < 0 || ny >= n || nx < 0 || nx >= m) {
                 continue;
             }
 
-            if (maps[nx][ny] === 0 || visited[nx][ny]) {
+            if (maps[ny][nx] === 0 || visited[ny][nx]) {
                 continue;
             }
 
-            visited[nx][ny] = true;
-            q.push([nx, ny, dist + 1]);
+            visited[ny][nx] = true;
+            q.push([ny, nx, dist + 1]);
         }
     }
 
