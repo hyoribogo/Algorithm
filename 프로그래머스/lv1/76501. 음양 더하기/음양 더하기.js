@@ -1,0 +1,1 @@
+const solution = (absolutes, signs) => absolutes.map((v, i) => signs[i] ? v : -v).reduce((acc, curr) => acc + curr)
