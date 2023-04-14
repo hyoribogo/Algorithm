@@ -1,9 +1,5 @@
 function solution(price, money, count) {
-    for(let i = 1, j = price; i <= count; i++, j += price) {
-        console.log(money, i, j)
-        money -= j
-        
-    }
-    
-    return money < 0 ? money * -1 : 0
+    let result = money - (price + price * count) * count / 2
+    return result < 0 ? result * -1 : 0
 }
+
