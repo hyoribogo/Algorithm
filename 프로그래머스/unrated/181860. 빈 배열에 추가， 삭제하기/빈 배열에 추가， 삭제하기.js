@@ -5,9 +5,10 @@ function solution(arr, flag) {
             for(let j = 0; j < arr[i] * 2; j++)
                 X.push(arr[i])
         }
-        else
-            X = X.slice(0, X.length - arr[i])
-        console.log(X)
+        else {
+            for(let j = 0; j < arr[i]; j++)
+                X.pop()
+        }
         
     }
     return X
