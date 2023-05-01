@@ -1,11 +1,13 @@
 function solution(n, k) {
     return n.toString(k)
         .split(/0+/)
-        .filter(i => i.length && isPrime(+i))
+        .filter(i => i.length && isPrime(i))
         .length
 }
 
 const isPrime = num => {
+    num = +num
+    
     if(num === 2) return true
     if(num === 1 || !(num % 2)) return false
     
