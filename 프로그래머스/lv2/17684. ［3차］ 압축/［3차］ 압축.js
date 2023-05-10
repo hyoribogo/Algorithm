@@ -1,26 +1,22 @@
 function solution(msg) {
-    let map = new Map();
-    let answer = [];
-    let index = 27;
-    let w = "";
-    let c = "";
-    let temp = 0;
+    const dict = [..."_ABCDEFGHIJKLMNOPQRSTUVWXYZ"]
+    const result = []
     
-    for(let i = 0; i < msg.length; i++){
-        w = msg[i];
-        c = msg[i+1];
-       if(!map.get(w+c)){
-           map.set(w+c,index++);
-           answer.push(w.charCodeAt()-64);
-       }else{
-           while(map.get(w+c)){
-               temp = w+c;
-               w = w+c;
-               c = msg[++i+1];
-           }
-           map.set(w+c,index++);
-           answer.push(map.get(temp));
-       }
+    while(msg.length) {
+        let w = ''
+        let idx = msg.length
+        
+        for(; idx > 0; idx--) {
+            w = msg.slice(0, idx)
+            
+            if(dict.includes(w)) {
+                result.push(dict.indexOf(w))
+                break
+            }
+        }
+        dict.push(w + msg[idx])
+        msg = msg.slice(w.length)
     }
-    return answer;
+    
+    return result
 }
