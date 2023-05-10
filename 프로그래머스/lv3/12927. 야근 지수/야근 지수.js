@@ -6,7 +6,7 @@ function solution(n, works) {
   while(n) {
     const max = works[0]
     
-    for(let i = works.length - 1; i >= 0; i--) {
+    for(let i = 0; i < works.length; i++) {
       if(works[i] >= max) {
         works[i]--
         n--
