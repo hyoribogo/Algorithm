@@ -3,17 +3,17 @@ function solution(record) {
     const result = []
     
     for(const m of record) {
-        const [c, id, nickname] = m.split(" ")
-        if(c === "Enter" || c === "Change")
+        const [state, id, nickname] = m.split(" ")
+        if(state === "Enter" || state === "Change")
             nicknameList.set(id, nickname)
     }
     
     for(const m of record) {
-        const [c, id] = m.split(" ")
+        const [state, id] = m.split(" ")
         
-        if(c === "Enter")
+        if(state === "Enter")
             result.push(nicknameList.get(id)+"님이 들어왔습니다.")
-        else if(c === "Leave")
+        else if(state === "Leave")
             result.push(nicknameList.get(id)+"님이 나갔습니다.")
     }
     
