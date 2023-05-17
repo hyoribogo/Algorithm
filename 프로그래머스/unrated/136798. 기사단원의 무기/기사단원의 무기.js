@@ -1,8 +1,8 @@
 function solution(number, limit, power) {
-    const powerArr = [0, 1]
+    let result = 1
     for(let i = 2; i <= number; i++) 
-        powerArr[i] = cntDiv(i) > limit ? power : cntDiv(i)
-    return powerArr.reduce((a, c) => a + c)
+        result += cntDiv(i) > limit ? power : cntDiv(i)
+    return result
 }
 
 function cntDiv(n) {
