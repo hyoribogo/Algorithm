@@ -15,6 +15,6 @@ function solution(X, Y) {
     }
     
     if(result === "") return "-1"
-    if([...new Set(result)][0] === "0") return "0"
+    if(result[0] === "0") return "0"
     return result
 }
