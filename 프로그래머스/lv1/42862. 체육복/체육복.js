@@ -1,20 +1,17 @@
 const solution = (n, lost, reserve) => {
-    let state = new Array(n).fill(1);
-    for (let i of lost)
-        state[i - 1]--
-    for (let i of reserve)
-        state[i - 1]++
-    for (let i = 0; i < n; i++) {
-        if (state[i] === 2) {
-            if (i > 0 && !state[i - 1]){
-                state[i - 1]++;
-                state[i]--;
-            }
-            else if (i < n && !state[i + 1]){
-                state[i + 1]++;
-                state[i]--;
-            }
+    const students = new Array(n).fill(1)
+    lost.forEach(i => students[i - 1]--)
+    reserve.forEach(i => students[i - 1]++)
+    
+    for (let i = 0; i < students.length; i++) {
+        if(!students[i] && students[i - 1] === 2) {
+            students[i]++
+        }
+        if(!students[i] && students[i + 1] === 2) {
+            students[i + 1]--
+            students[i]++
         }
     }
-    return state.filter(i => i > 0).length;
+    
+    return students.filter(i => i).length
 }
